@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -5,9 +6,16 @@ export default function Home() {
     <main className="min-h-screen bg-white text-zinc-900">
       {/* Navigation */}
       <nav className="flex items-center justify-between px-8 py-6 max-w-6xl mx-auto">
-        <div className="text-xl font-bold">
-          William Chen
-        </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="William Chen"
+            width={160}
+            height={50}
+            className="h-14 w-auto"
+            priority
+          />
+        </Link>
 
         <div className="flex gap-8 text-sm">
           <a href="#about" className="hover:text-zinc-500">
