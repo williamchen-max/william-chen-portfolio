@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import Image from "next/image";
 
 export default function IndustrialAutomation() {
   return (
@@ -39,6 +40,28 @@ export default function IndustrialAutomation() {
             to compare each product&apos;s point cloud against a reference
             model in real time.
           </p>
+
+          <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
+
+            <div>
+              <p className="text-3xl font-bold">
+                &lt;500ms
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">
+                Scan-to-Decision Time
+              </p>
+            </div>
+
+            <div>
+              <p className="text-3xl font-bold">
+                3 Months
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">
+                Archived Inspection History
+              </p>
+            </div>
+
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-10">
 
@@ -93,6 +116,37 @@ export default function IndustrialAutomation() {
             fries inspection system, integrating live camera imaging to
             monitor length ratio and defect rate on an hourly basis.
           </p>
+
+          <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
+
+            <div>
+              <p className="text-3xl font-bold">
+                120 pc/min
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">
+                Inspection Throughput
+              </p>
+            </div>
+
+            <div>
+              <p className="text-3xl font-bold">
+                1%
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">
+                Measurement Accuracy
+              </p>
+            </div>
+
+            <div>
+              <p className="text-3xl font-bold">
+                Hourly
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">
+                Length & Defect Quality Checks
+              </p>
+            </div>
+
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-10">
 
@@ -149,6 +203,19 @@ export default function IndustrialAutomation() {
             panel access.
           </p>
 
+          <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
+
+            <div>
+              <p className="text-3xl font-bold">
+                4 Systems
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">
+                Commissioned End-to-End — I/O, Motion, VFD, Network
+              </p>
+            </div>
+
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8 mt-10">
 
             <div>
@@ -182,6 +249,106 @@ export default function IndustrialAutomation() {
                 remote access to the plant network.
               </p>
             </div>
+
+          </div>
+
+        </div>
+
+        {/* Project 4 */}
+        <div className="mt-20 border-t border-zinc-200 pt-12">
+
+          <p className="text-sm text-zinc-500">
+            PROJECT 04
+          </p>
+
+          <h2 className="text-4xl font-bold mt-3">
+            Dew Point Prediction for Compressed Air Systems
+          </h2>
+
+          <p className="text-zinc-600 max-w-3xl mt-6 leading-8">
+            A graduate team project predicting dew point in a
+            manufacturing plant&apos;s compressed air drying system, to
+            move from reactive threshold-based control toward proactive,
+            predictive control.
+          </p>
+
+          <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
+
+            <div>
+              <p className="text-3xl font-bold">
+                0.9925
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">
+                R² on Test Set
+              </p>
+            </div>
+
+            <div>
+              <p className="text-3xl font-bold">
+                0.0089
+              </p>
+              <p className="text-sm text-zinc-500 mt-1">
+                RMSE on Test Set
+              </p>
+            </div>
+
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mt-10">
+
+            <div>
+              <h3 className="font-semibold">
+                My Role
+              </h3>
+              <p className="text-zinc-600 mt-2">
+                Implemented and compared regression algorithms in
+                Python, and led hyperparameter tuning on the
+                best-performing model.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold">
+                Technologies
+              </h3>
+              <p className="text-zinc-600 mt-2">
+                Python, pandas, scikit-learn, GridSearchCV.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold">
+                Focus
+              </h3>
+              <p className="text-zinc-600 mt-2">
+                Feature engineering, comparative evaluation across
+                eight regression models, and hyperparameter tuning
+                validated by R² and RMSE.
+              </p>
+            </div>
+
+          </div>
+
+          {/* Correlation Chart */}
+          <div className="mt-12">
+
+            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+
+              <Image
+                src="/dew-point/correlation-plot.png"
+                alt="Correlation plot between dew point and the top four predictive features"
+                width={1200}
+                height={1200}
+                className="w-full h-auto"
+              />
+
+            </div>
+
+            <p className="text-sm text-zinc-500 mt-3">
+              Correlation between dew point and the four most
+              predictive features — supply temp, discharge temp,
+              step, and motor amperage.
+            </p>
 
           </div>
 
