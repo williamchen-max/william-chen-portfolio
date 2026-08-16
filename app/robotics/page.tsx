@@ -217,6 +217,103 @@ export default function Robotics() {
         </div>
 
 
+        {/* =====================================================
+            PROJECT 03 — SOFT GRIPPER OPTIMIZATION
+        ===================================================== */}
+        <div className="mt-20 border-t border-zinc-200 pt-12">
+
+          <p className="text-sm text-zinc-500">
+            UNIVERSITY PROJECT
+          </p>
+
+          <h2 className="text-4xl font-bold mt-3">
+            Soft Gripper Weight & Rigidity Optimization
+          </h2>
+
+          <p className="text-zinc-600 max-w-3xl mt-6 leading-8">
+            A graduate team project redesigning a soft robotic gripper for
+            fruit picking. I led the topology optimization, cutting the
+            gripper&apos;s weight nearly in half through iterative FEA-based
+            design while preserving the compliant grip needed to handle
+            delicate produce without damage.
+          </p>
+
+
+          {/* Project Details */}
+          <div className="grid md:grid-cols-5 gap-10 mt-10 items-center">
+
+            {/* Soft Gripper Image */}
+            <div className="md:col-span-2">
+
+              <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+
+                <Image
+                  src="/soft-gripper/gripper-final.png"
+                  alt="Topology-optimized soft gripper finger, final design"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto"
+                />
+
+              </div>
+
+            </div>
+
+
+            {/* Project Information */}
+            <div className="md:col-span-3 grid md:grid-cols-3 gap-8">
+
+              <div>
+                <h3 className="font-semibold">
+                  My Role
+                </h3>
+
+                <p className="text-zinc-600 mt-2">
+                  Designed and ran the topology optimization —
+                  mesh, material, and constraint setup across
+                  iterative FEA studies.
+                </p>
+              </div>
+
+
+              <div>
+                <h3 className="font-semibold">
+                  Technologies
+                </h3>
+
+                <p className="text-zinc-600 mt-2">
+                  SolidWorks • Topology Optimization • FEA • 3D Printing
+                </p>
+              </div>
+
+
+              <div>
+                <h3 className="font-semibold">
+                  Focus
+                </h3>
+
+                <p className="text-zinc-600 mt-2">
+                  Reducing weight while preserving gripping
+                  rigidity for damage-free handling of produce.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          {/* Project Link */}
+          <Link
+            href="/robotics/soft-gripper"
+            className="inline-block mt-8 font-medium hover:underline"
+          >
+            View Project →
+          </Link>
+
+        </div>
+
+
       </section>
 
     </main>

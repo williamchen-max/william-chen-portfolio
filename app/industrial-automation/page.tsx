@@ -30,13 +30,14 @@ export default function IndustrialAutomation() {
           </p>
 
           <h2 className="text-4xl font-bold mt-3">
-            Vision-Based Quality Inspection System
+            Inline Bun Quality Inspection System
           </h2>
 
           <p className="text-zinc-600 max-w-3xl mt-6 leading-8">
-            Developed an inline machine vision inspection system for
-            automated product sorting, defect detection, and dimensional
-            measurement within a production environment.
+            Developed a full-stack machine vision inspection system for
+            inline bun quality control, using a Time-of-Flight 3D camera
+            to compare each product&apos;s point cloud against a reference
+            model in real time.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mt-10">
@@ -46,8 +47,9 @@ export default function IndustrialAutomation() {
                 My Role
               </h3>
               <p className="text-zinc-600 mt-2">
-                System integration, PLC programming,
-                machine vision, and commissioning.
+                End-to-end development — custom Windows application
+                for data collection (C#), 3D image processing (Halcon),
+                and PLC integration for pass/fail sorting.
               </p>
             </div>
 
@@ -56,8 +58,8 @@ export default function IndustrialAutomation() {
                 Technologies
               </h3>
               <p className="text-zinc-600 mt-2">
-                Machine Vision, PLC, HMI, sensors,
-                conveyors, pneumatic actuators.
+                C#, Halcon, Time-of-Flight camera,
+                Allen-Bradley PLC, TCP/IP.
               </p>
             </div>
 
@@ -66,8 +68,8 @@ export default function IndustrialAutomation() {
                 Focus
               </h3>
               <p className="text-zinc-600 mt-2">
-                Automated inspection, defect detection,
-                measurement, and product sorting.
+                Sub-500ms scan-to-decision time, point-cloud scoring,
+                and 3-month result and image archiving for traceability.
               </p>
             </div>
 
@@ -83,13 +85,13 @@ export default function IndustrialAutomation() {
           </p>
 
           <h2 className="text-4xl font-bold mt-3">
-            Industrial Automation & Commissioning
+            Fries Length & Quality Grading System
           </h2>
 
           <p className="text-zinc-600 max-w-3xl mt-6 leading-8">
-            Field commissioning and startup of automated industrial
-            equipment, including factory acceptance testing, site
-            acceptance testing, troubleshooting, and production ramp-up.
+            Designed the operator and manager HMI for a production-line
+            fries inspection system, integrating live camera imaging to
+            monitor length ratio and defect rate on an hourly basis.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mt-10">
@@ -99,8 +101,9 @@ export default function IndustrialAutomation() {
                 My Role
               </h3>
               <p className="text-zinc-600 mt-2">
-                Controls engineer, commissioning,
-                troubleshooting, and customer support.
+                HMI design and development (Ignition), Gocator
+                linescan camera integration, and conveyor/motor speed
+                configuration to optimize image quality.
               </p>
             </div>
 
@@ -109,8 +112,7 @@ export default function IndustrialAutomation() {
                 Technologies
               </h3>
               <p className="text-zinc-600 mt-2">
-                PLC, HMI, VFD, SCADA, industrial
-                networking, sensors, and actuators.
+                Ignition, Gocator linescan camera, PLC.
               </p>
             </div>
 
@@ -119,8 +121,9 @@ export default function IndustrialAutomation() {
                 Focus
               </h3>
               <p className="text-zinc-600 mt-2">
-                FAT, SAT, commissioning, startup,
-                troubleshooting, and optimization.
+                Simple on/off controls for operators, configurability
+                and history tracing for managers, and consistent
+                product quality across production runs.
               </p>
             </div>
 
@@ -136,13 +139,14 @@ export default function IndustrialAutomation() {
           </p>
 
           <h2 className="text-4xl font-bold mt-3">
-            Motor Synchronization & Motion Control
+            Freezer System Commissioning
           </h2>
 
           <p className="text-zinc-600 max-w-3xl mt-6 leading-8">
-            Developed closed-loop control strategies for synchronizing
-            multiple motors in an industrial conveyor application,
-            including PID tuning and drive control.
+            Commissioned a production freezer system end-to-end, from
+            control panel I/O verification through motor and belt tuning,
+            VFD configuration, and full network integration with remote
+            panel access.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mt-10">
@@ -152,8 +156,9 @@ export default function IndustrialAutomation() {
                 My Role
               </h3>
               <p className="text-zinc-600 mt-2">
-                Controls development, PID tuning,
-                troubleshooting, and optimization.
+                Controls commissioning — I/O checkout, PID and motor
+                ratio tuning, VFD configuration, and network/remote
+                access setup.
               </p>
             </div>
 
@@ -162,8 +167,8 @@ export default function IndustrialAutomation() {
                 Technologies
               </h3>
               <p className="text-zinc-600 mt-2">
-                PLC, VFD, PID control, encoder feedback,
-                and industrial motion control.
+                PLC, VFD, PID control, Industrial
+                Ethernet, VPN/remote access.
               </p>
             </div>
 
@@ -172,60 +177,9 @@ export default function IndustrialAutomation() {
                 Focus
               </h3>
               <p className="text-zinc-600 mt-2">
-                Motor synchronization, speed regulation,
-                feedback control, and stability.
-              </p>
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* Project 4 */}
-        <div className="mt-20 border-t border-zinc-200 pt-12">
-
-          <p className="text-sm text-zinc-500">
-            PROJECT 04
-          </p>
-
-          <h2 className="text-4xl font-bold mt-3">
-            Industrial Networking & Remote Access
-          </h2>
-
-          <p className="text-zinc-600 max-w-3xl mt-6 leading-8">
-            Designed and troubleshot industrial communication and
-            remote-access systems for connected automation equipment.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8 mt-10">
-
-            <div>
-              <h3 className="font-semibold">
-                My Role
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                Network configuration, troubleshooting,
-                remote access, and system support.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">
-                Technologies
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                Industrial Ethernet, VPN, PLC networks,
-                VFD communication, and remote diagnostics.
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold">
-                Focus
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                Reliable communication, remote troubleshooting,
-                and connected industrial systems.
+                Control panel I/O verification, motor/belt speed and
+                PID tuning, VFD parameter validation, and secure
+                remote access to the plant network.
               </p>
             </div>
 
