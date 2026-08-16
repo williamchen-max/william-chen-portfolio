@@ -207,7 +207,7 @@ export default function IndustrialAutomation() {
 
             <div>
               <p className="text-3xl font-bold">
-                4 Systems
+                Production Systems
               </p>
               <p className="text-sm text-zinc-500 mt-1">
                 Commissioned End-to-End — I/O, Motion, VFD, Network
