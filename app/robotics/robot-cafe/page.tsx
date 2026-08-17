@@ -5,18 +5,16 @@ export default function RobotCafe() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
 
-        <Navbar />
+      <Navbar />
 
       {/* Back to Robotics */}
       <div className="max-w-6xl mx-auto px-8 pt-8">
-
         <Link
           href="/robotics"
           className="text-sm text-zinc-500 hover:text-zinc-900"
         >
           ← Back to Robotics
         </Link>
-
       </div>
 
       {/* Hero */}
@@ -43,6 +41,7 @@ export default function RobotCafe() {
             <p className="text-sm text-zinc-500 uppercase">
               Robot Platform
             </p>
+
             <p className="font-semibold mt-2">
               DOBOT AtomW Wheeled Version
             </p>
@@ -52,6 +51,7 @@ export default function RobotCafe() {
             <p className="text-sm text-zinc-500 uppercase">
               Technologies
             </p>
+
             <p className="font-semibold mt-2">
               ROS 2 • AMR • Teleoperation
             </p>
@@ -61,6 +61,7 @@ export default function RobotCafe() {
             <p className="text-sm text-zinc-500 uppercase">
               My Role
             </p>
+
             <p className="font-semibold mt-2">
               AMR Navigation & Robot Movement
             </p>
@@ -111,9 +112,11 @@ export default function RobotCafe() {
 
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">01</p>
+
             <h3 className="font-semibold mt-2">
               Customer Order
             </h3>
+
             <p className="text-sm text-zinc-600 mt-3">
               Customer places an order through the café system.
             </p>
@@ -121,9 +124,11 @@ export default function RobotCafe() {
 
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">02</p>
+
             <h3 className="font-semibold mt-2">
               Confirmation
             </h3>
+
             <p className="text-sm text-zinc-600 mt-3">
               Order is confirmed and payment is completed.
             </p>
@@ -131,9 +136,11 @@ export default function RobotCafe() {
 
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">03</p>
+
             <h3 className="font-semibold mt-2">
               Navigation
             </h3>
+
             <p className="text-sm text-zinc-600 mt-3">
               The AMR navigates to the required location.
             </p>
@@ -141,9 +148,11 @@ export default function RobotCafe() {
 
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">04</p>
+
             <h3 className="font-semibold mt-2">
               Pastry Retrieval
             </h3>
+
             <p className="text-sm text-zinc-600 mt-3">
               The robot performs the pastry retrieval process.
             </p>
@@ -151,9 +160,11 @@ export default function RobotCafe() {
 
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">05</p>
+
             <h3 className="font-semibold mt-2">
               Delivery
             </h3>
+
             <p className="text-sm text-zinc-600 mt-3">
               The robot moves to the required destination.
             </p>
@@ -189,6 +200,7 @@ export default function RobotCafe() {
               <h3 className="font-semibold text-xl">
                 Map Configuration
               </h3>
+
               <p className="text-zinc-600 mt-3 leading-7">
                 Created and configured the navigation map used by the
                 AMR to understand and move through the café environment.
@@ -199,6 +211,7 @@ export default function RobotCafe() {
               <h3 className="font-semibold text-xl">
                 Waypoint Planning
               </h3>
+
               <p className="text-zinc-600 mt-3 leading-7">
                 Defined navigation waypoints and configured movement
                 between important locations in the system.
@@ -209,6 +222,7 @@ export default function RobotCafe() {
               <h3 className="font-semibold text-xl">
                 Motion Optimization
               </h3>
+
               <p className="text-zinc-600 mt-3 leading-7">
                 Adjusted navigation and waypoint transitions to achieve
                 smooth and reliable movement between locations.
@@ -221,114 +235,112 @@ export default function RobotCafe() {
 
       </section>
 
+
       {/* AMR Navigation */}
-<section className="bg-zinc-50 px-8 py-24">
+      <section className="bg-zinc-50 px-8 py-24">
 
-  <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto">
 
-    <p className="text-sm tracking-widest text-zinc-500 uppercase">
-      My Contribution
-    </p>
-
-    <h2 className="text-4xl font-bold mt-4">
-      AMR Navigation
-    </h2>
-
-    <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
-     My primary responsibility was configuring and optimizing the
-    autonomous mobile robot navigation system used to move the robot
-    between key locations within the café environment. The AMR uses
-    SLAM with two 2D LiDAR sensors, positioned at the front and rear
-    of the platform, to build and navigate the café environment.
-    </p>
-
-    {/* Navigation Process */}
-    <div className="grid md:grid-cols-4 gap-6 mt-12">
-
-      <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-        <p className="text-sm text-zinc-500">
-          01
-        </p>
-
-        <h3 className="text-xl font-semibold mt-3">
-          SLAM Mapping
-        </h3>
-
-        <p className="text-zinc-600 mt-3 leading-7">
-        Configured the AMR navigation system to use SLAM for mapping
-        and localization within the café environment.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-        <p className="text-sm text-zinc-500">
-          02
-        </p>
-
-        <h3 className="text-xl font-semibold mt-3">
-          Dual 2D LiDAR
-        </h3>
-
-        <p className="text-zinc-600 mt-3 leading-7">
-          Worked with two 2D LiDAR sensors positioned at the front and
-        rear of the AMR to support environmental perception and navigation.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-        <p className="text-sm text-zinc-500">
-          03
-        </p>
-
-        <h3 className="text-xl font-semibold mt-3">
-          Waypoint Planning
-        </h3>
-
-        <p className="text-zinc-600 mt-3 leading-7">
-          Configured navigation waypoints for key locations and defined
-        the robot's movement between different areas of the café.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-        <p className="text-sm text-zinc-500">
-          04
-        </p>
-
-        <h3 className="text-xl font-semibold mt-3">
-          Movement Optimization
-        </h3>
-
-        <p className="text-zinc-600 mt-3 leading-7">
-          Tested and refined waypoint positioning and navigation behavior
-        to achieve smooth and reliable movement between locations.
-        </p>
-      </div>
-
-    </div>
-
-    {/* Map Placeholder */}
-    <div className="mt-16">
-
-      <div className="aspect-video bg-white rounded-2xl border border-zinc-200 flex items-center justify-center">
-
-        <div className="text-center">
-          <p className="text-zinc-400 text-lg">
-            AMR Navigation Map
+          <p className="text-sm tracking-widest text-zinc-500 uppercase">
+            My Contribution
           </p>
 
-          <p className="text-zinc-400 text-sm mt-2">
-            Project map image will be added here
+          <h2 className="text-4xl font-bold mt-4">
+            AMR Navigation
+          </h2>
+
+          <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
+            My primary responsibility was configuring and optimizing the
+            autonomous mobile robot navigation system used to move the robot
+            between key locations within the café environment. The AMR uses
+            SLAM with two 2D LiDAR sensors, positioned at the front and rear
+            of the platform, to build and navigate the café environment.
           </p>
+
+          {/* Navigation Process */}
+          <div className="grid md:grid-cols-4 gap-6 mt-12">
+
+            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <p className="text-sm text-zinc-500">
+                01
+              </p>
+
+              <h3 className="text-xl font-semibold mt-3">
+                SLAM Mapping
+              </h3>
+
+              <p className="text-zinc-600 mt-3 leading-7">
+                Configured the AMR navigation system to use SLAM for mapping
+                and localization within the café environment.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <p className="text-sm text-zinc-500">
+                02
+              </p>
+
+              <h3 className="text-xl font-semibold mt-3">
+                Dual 2D LiDAR
+              </h3>
+
+              <p className="text-zinc-600 mt-3 leading-7">
+                Worked with two 2D LiDAR sensors positioned at the front and
+                rear of the AMR to support environmental perception and navigation.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <p className="text-sm text-zinc-500">
+                03
+              </p>
+
+              <h3 className="text-xl font-semibold mt-3">
+                Waypoint Planning
+              </h3>
+
+              <p className="text-zinc-600 mt-3 leading-7">
+                Configured navigation waypoints for key locations and defined
+                the robot's movement between different areas of the café.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <p className="text-sm text-zinc-500">
+                04
+              </p>
+
+              <h3 className="text-xl font-semibold mt-3">
+                Movement Optimization
+              </h3>
+
+              <p className="text-zinc-600 mt-3 leading-7">
+                Tested and refined waypoint positioning and navigation behavior
+                to achieve smooth and reliable movement between locations.
+              </p>
+            </div>
+
+          </div>
+
+
+          {/* Navigation Map */}
+          <div className="mt-16">
+
+            <div className="aspect-video bg-white rounded-2xl border border-zinc-200 overflow-hidden">
+
+              <img
+                src="/map.png"
+                alt="AMR Navigation Map"
+                className="w-full h-full object-contain"
+              />
+
+            </div>
+
+          </div>
+
         </div>
 
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+      </section>
 
 
       {/* ROS 2 */}
