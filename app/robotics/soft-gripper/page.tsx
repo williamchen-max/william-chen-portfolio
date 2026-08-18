@@ -33,9 +33,11 @@ export default function SoftGripper() {
 
         <p className="text-xl text-zinc-600 max-w-3xl mt-8 leading-8">
           A flexible robotic end-effector for fruit and vegetable
-          harvesting, redesigned through topology optimization to cut
-          weight while preserving the compliant grip needed to handle
-          delicate produce without damage.
+          harvesting. I took the gripper finger from 130 g to 71 g
+          through iterative topology optimization, then reworked the
+          optimizer&apos;s output into geometry that could actually be
+          printed — without losing the compliant grip that keeps
+          delicate produce undamaged.
         </p>
 
         {/* Project Info */}
@@ -55,7 +57,7 @@ export default function SoftGripper() {
               Technologies
             </p>
             <p className="font-semibold mt-2">
-              SolidWorks • Topology Optimization • FEA
+              SolidWorks • Topology Optimization • FEA • FDM 3D Printing
             </p>
           </div>
 
@@ -64,7 +66,7 @@ export default function SoftGripper() {
               My Role
             </p>
             <p className="font-semibold mt-2">
-              Topology Optimization & Simulation
+              Topology Optimization, FEA & Design for 3D Printing
             </p>
           </div>
 
@@ -83,18 +85,26 @@ export default function SoftGripper() {
           </p>
 
           <h2 className="text-4xl font-bold mt-4">
-            From flexible concept to a lighter, printable gripper.
+            Weight you can&apos;t remove without touching the thing that
+            makes it work.
           </h2>
 
           <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
             Completed as a three-person team project, this project
             designed a flexible end-effector for robotic fruit and
-            vegetable harvesting — a gripper that can conform to
-            irregular produce shapes while applying enough force to
-            hold it without bruising or damaging it. I led the
-            topology optimization work used to cut the gripper&apos;s
-            weight while preserving its structural strength and
-            compliant grip.
+            vegetable harvesting — a gripper that conforms to irregular
+            produce while holding it firmly enough not to drop it and
+            gently enough not to bruise it. Mass at the end of a
+            harvesting arm is expensive: it drives actuator sizing,
+            cycle time, and arm inertia.
+          </p>
+
+          <p className="text-lg text-zinc-600 max-w-3xl mt-6 leading-8">
+            My piece was making the finger lighter. What makes that
+            difficult in a compliant gripper is that weight and function
+            aren&apos;t separable — the finger grips <em>by</em> bending,
+            so every gram of material removed changes the mechanism
+            itself. There is no safe interior to hollow out.
           </p>
 
         </div>
@@ -226,18 +236,24 @@ export default function SoftGripper() {
         </p>
 
         <h2 className="text-4xl font-bold mt-4">
-          Topology Optimization & Weight Reduction
+          Sweeping the constraint space, not running the optimizer once.
         </h2>
 
         <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
-          I designed and ran the gripper finger through SolidWorks&apos;
-          topology optimization tool across several iterations, using
-          five steps: create the mesh, define the material, define the
-          hinge, define the fixed border, and evaluate the resulting
-          stress plane. For each iteration I varied the mesh density,
-          boundary conditions, displacement constraint, and target mass
-          reduction, then ran a static stress simulation on the result to
-          weigh strength retained against weight removed.
+          A single optimization run tells you very little — it gives you
+          one point in a tradeoff space without telling you where that
+          point sits. So I set the work up as a sweep. I built the FEA
+          mesh, defined the material, set the grip hinge and the fixed
+          outer border, then varied the displacement constraint from 0.8
+          to 1.5 and pushed mass reduction targets from 10% up to 80%
+          across iterations.
+        </p>
+
+        <p className="text-lg text-zinc-600 max-w-3xl mt-6 leading-8">
+          Every candidate then went through a static stress simulation
+          against the original finger under identical load conditions,
+          so the question at each step was always what the design had
+          <em> lost</em>, not whether the result looked plausible.
         </p>
 
         {/* Optimization Process */}
@@ -260,8 +276,9 @@ export default function SoftGripper() {
               Hinge & Border
             </h3>
             <p className="text-zinc-600 mt-3 leading-7">
-              Defined the grip hinge point and fixed outer border
-              constraining the optimization.
+              Defined the grip hinge point and fixed outer border —
+              the constraints that protect the bending behaviour
+              through optimization.
             </p>
           </div>
 
@@ -315,168 +332,291 @@ export default function SoftGripper() {
       </section>
 
 
-      {/* Validation — Simulation */}
+      {/* Design for Manufacturing */}
       <section className="bg-zinc-50 px-8 py-24">
 
         <div className="max-w-6xl mx-auto">
 
           <p className="text-sm tracking-widest text-zinc-500 uppercase">
-            Validation
+            Design for Manufacturing
           </p>
 
           <h2 className="text-4xl font-bold mt-4">
-            Initial vs. Final Design Simulation
+            The optimizer doesn&apos;t know how the part gets made.
           </h2>
 
           <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
-            To validate the optimized geometry, I ran static stress
-            simulations on the original finger design and the final
-            topology-optimized design under the same load conditions.
-            The final design kept a comparable stress distribution
-            while removing significant material.
+            The aggressive iterations produced geometry that was lighter
+            and, as far as the solver was concerned, correct — but not
+            manufacturable. Topology optimization has no model of the
+            FDM process, so it returns organic webbing with sharp
+            transitions and features that don&apos;t survive contact with
+            a nozzle and a layer height.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6 mt-12">
+          <p className="text-lg text-zinc-600 max-w-3xl mt-6 leading-8">
+            It also treats the part as isotropic, which an FDM print
+            isn&apos;t — a printed part is markedly weaker across layer
+            boundaries than along them. For a finger that grips by
+            flexing in one direction and has to stay stiff in the
+            others, that anisotropy isn&apos;t a defect to work around.
+            It&apos;s a design variable.
+          </p>
 
-            <div>
-              <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-                <Image
-                  src="/soft-gripper/gripper-simulation-initial.png"
-                  alt="Static stress simulation of the initial gripper design"
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto"
-                />
-              </div>
-              <p className="text-sm text-zinc-500 mt-3">
-                Initial Design
+          <p className="text-lg text-zinc-600 max-w-3xl mt-6 leading-8">
+            So I treated the optimizer&apos;s material map as a guide
+            rather than a result. The final finger is a redrawn part that
+            keeps the load paths the solver identified, smooths the
+            transitions it left sharp, puts material back wherever the
+            geometry fell below what the process could reliably produce,
+            and is oriented on the bed to put the layers where the
+            bending needs them. That interpretation step is the part the
+            software can&apos;t do.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+
+            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <h3 className="text-xl font-semibold">
+                Keep the load paths
+              </h3>
+              <p className="text-zinc-600 mt-3 leading-7">
+                The material the solver refused to remove shows where
+                load actually travels. Those regions carried straight
+                into the final geometry.
               </p>
             </div>
 
-            <div>
-              <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-                <Image
-                  src="/soft-gripper/gripper-simulation-final.png"
-                  alt="Static stress simulation of the final gripper design"
-                  width={1200}
-                  height={800}
-                  className="w-full h-auto"
-                />
-              </div>
-              <p className="text-sm text-zinc-500 mt-3">
-                Final Design
+            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <h3 className="text-xl font-semibold">
+                Soften the transitions
+              </h3>
+              <p className="text-zinc-600 mt-3 leading-7">
+                Raw optimizer output meets at abrupt angles that
+                concentrate stress. Fairing those junctions costs a
+                little mass and buys back durability.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <h3 className="text-xl font-semibold">
+                Respect the process
+              </h3>
+              <p className="text-zinc-600 mt-3 leading-7">
+                Features finer than the extrusion width, or overhangs
+                the printer couldn&apos;t hold, were rebuilt into forms
+                that print cleanly in PLA.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <h3 className="text-xl font-semibold">
+                Orient for the bend
+              </h3>
+              <p className="text-zinc-600 mt-3 leading-7">
+                The finger has to flex in one direction and resist load
+                in the others. Print orientation was chosen so bending
+                stress runs along the extrusions rather than across the
+                layer bonds — the same anisotropy that would
+                delaminate a flexure, used to bias stiffness where the
+                design wants it.
               </p>
             </div>
 
           </div>
 
+        </div>
+
+      </section>
+
+
+      {/* Validation — Simulation */}
+      <section className="max-w-6xl mx-auto px-8 py-24">
+
+        <p className="text-sm tracking-widest text-zinc-500 uppercase">
+          Validation
+        </p>
+
+        <h2 className="text-4xl font-bold mt-4">
+          Initial vs. Final Design Simulation
+        </h2>
+
+        <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
+          I ran static stress simulations on the original finger design
+          and the final printable design under the same load conditions.
+          The final design holds a comparable stress distribution while
+          carrying substantially less material.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-6 mt-12">
+
+          <div>
+            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+              <Image
+                src="/soft-gripper/gripper-simulation-final.png"
+                alt="Static stress simulation of the initial gripper design"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-zinc-500 mt-3">
+              Initial Design
+            </p>
+          </div>
+
+          <div>
+            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+              <Image
+                src="/soft-gripper/gripper-simulation-initial.png"
+                alt="Static stress simulation of the final gripper design"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-zinc-500 mt-3">
+              Final Design
+            </p>
+          </div>
+
+        </div>
+
+        <div className="max-w-3xl mt-12 border-l-2 border-zinc-300 pl-6">
+          <p className="text-lg text-zinc-600 leading-8">
+            Worth being precise about what this shows. The stress
+            response is simulated and compared directly against the
+            original. The compliant grip was <em>preserved by
+            constraint</em> — through the hinge definition and
+            displacement limits that shaped every optimization run —
+            rather than measured. Force-deflection was never
+            characterized on a rig.
+          </p>
         </div>
 
       </section>
 
 
       {/* Results */}
-      <section className="max-w-6xl mx-auto px-8 py-24">
-
-        <p className="text-sm tracking-widest text-zinc-500 uppercase">
-          Results
-        </p>
-
-        <h2 className="text-4xl font-bold mt-4">
-          130g to 71g — roughly 45% lighter.
-        </h2>
-
-        <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
-          The final iteration was softened from the raw topology
-          optimization output into a shape that could be 3D printed,
-          cutting the gripper finger&apos;s weight from 130g to 71g
-          while keeping its stress response in a similar range to the
-          original design and preserving the compliant bending needed
-          to grip irregular, delicate produce without damaging it.
-        </p>
-
-        <div className="mt-12">
-          <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-            <Image
-              src="/soft-gripper/gripper-final.png"
-              alt="Final 3D-printable soft gripper design"
-              width={1200}
-              height={800}
-              className="w-full h-auto"
-            />
-          </div>
-          <p className="text-sm text-zinc-500 mt-3">
-            Final, print-ready gripper geometry
-          </p>
-        </div>
-
-      </section>
-
-
-      {/* Conclusions */}
       <section className="bg-zinc-50 px-8 py-24">
 
         <div className="max-w-6xl mx-auto">
 
           <p className="text-sm tracking-widest text-zinc-500 uppercase">
-            Conclusions
+            Results
           </p>
 
           <h2 className="text-4xl font-bold mt-4">
-            Key Takeaways
+            130 g to 71 g — and it prints.
           </h2>
 
-          <div className="grid md:grid-cols-5 gap-4 mt-12">
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
 
-            <div className="bg-white rounded-xl p-6 border border-zinc-200">
-              <h3 className="font-semibold">
-                Energy Cost
-              </h3>
-              <p className="text-sm text-zinc-600 mt-3">
-                Topology optimization minimized material use, reducing
-                production energy cost.
+            <div className="bg-white rounded-2xl p-8 border border-zinc-200">
+              <p className="text-5xl font-bold">59 g</p>
+              <p className="text-zinc-600 mt-3 leading-7">
+                removed from the finger, 130 g down to 71 g
               </p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 border border-zinc-200">
-              <h3 className="font-semibold">
-                Enhanced Flexibility
-              </h3>
-              <p className="text-sm text-zinc-600 mt-3">
-                The optimized design adapts to a range of gripping
-                scenarios.
+            <div className="bg-white rounded-2xl p-8 border border-zinc-200">
+              <p className="text-5xl font-bold">45%</p>
+              <p className="text-zinc-600 mt-3 leading-7">
+                lighter, at a comparable simulated stress distribution
               </p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 border border-zinc-200">
-              <h3 className="font-semibold">
-                Product Quality
-              </h3>
-              <p className="text-sm text-zinc-600 mt-3">
-                Gentle handling minimizes product damage and preserves
-                quality.
+            <div className="bg-white rounded-2xl p-8 border border-zinc-200">
+              <p className="text-5xl font-bold">PLA</p>
+              <p className="text-zinc-600 mt-3 leading-7">
+                printed on FDM from the final geometry
               </p>
             </div>
 
-            <div className="bg-white rounded-xl p-6 border border-zinc-200">
-              <h3 className="font-semibold">
-                Cost-Effectiveness
-              </h3>
-              <p className="text-sm text-zinc-600 mt-3">
-                Material savings without compromising performance.
-              </p>
-            </div>
+          </div>
 
-            <div className="bg-white rounded-xl p-6 border border-zinc-200">
-              <h3 className="font-semibold">
-                Weight Reduction
-              </h3>
-              <p className="text-sm text-zinc-600 mt-3">
-                FEA confirmed the design maintains integrity under
-                varying loads.
-              </p>
-            </div>
+          <p className="text-lg text-zinc-600 max-w-3xl mt-12 leading-8">
+            The final geometry printed in PLA and was checked by hand —
+            squeezing the finger to feel whether it bent the way the
+            simulation predicted and sprang back. It did. That&apos;s a
+            sanity check rather than a characterization, but it
+            confirmed the part was real and that the compliance survived
+            the material that came out of it.
+          </p>
 
+          <div className="mt-12">
+            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+              <Image
+                src="/soft-gripper/gripper-final.png"
+                alt="Final 3D-printable soft gripper geometry"
+                width={1200}
+                height={800}
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-zinc-500 mt-3">
+              Final, print-ready geometry
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* Limitations & Next Steps */}
+      <section className="max-w-6xl mx-auto px-8 py-24">
+
+        <p className="text-sm tracking-widest text-zinc-500 uppercase">
+          Limitations & Next Steps
+        </p>
+
+        <h2 className="text-4xl font-bold mt-4">
+          What I&apos;d do with another cycle.
+        </h2>
+
+        <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
+          The project ended at a validated, printed part. Three things
+          would take it from a working prototype to something you could
+          put on a harvester.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6 mt-12">
+
+          <div className="border border-zinc-200 rounded-2xl p-6">
+            <h3 className="text-xl font-semibold">
+              Characterize the compliance
+            </h3>
+            <p className="text-zinc-600 mt-3 leading-7">
+              Clamp the fixed border, load the fingertip in known
+              increments, and measure deflection — producing
+              force-deflection curves for the original and optimized
+              parts to quantify what the 45% actually cost.
+            </p>
+          </div>
+
+          <div className="border border-zinc-200 rounded-2xl p-6">
+            <h3 className="text-xl font-semibold">
+              Cycle it to failure
+            </h3>
+            <p className="text-zinc-600 mt-3 leading-7">
+              A harvesting gripper closes thousands of times a day.
+              Static stress says nothing about fatigue at the thinned
+              sections, which is where a lightweighted flexure would
+              be expected to go first.
+            </p>
+          </div>
+
+          <div className="border border-zinc-200 rounded-2xl p-6">
+            <h3 className="text-xl font-semibold">
+              Test against real produce
+            </h3>
+            <p className="text-zinc-600 mt-3 leading-7">
+              The requirement was gripping without bruising. That is
+              ultimately a claim about fruit, and it needs damage
+              rates across a range of sizes, ripeness, and surface
+              conditions to be settled.
+            </p>
           </div>
 
         </div>
