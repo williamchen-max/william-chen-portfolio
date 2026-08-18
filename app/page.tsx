@@ -1,40 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
-      {/* Navigation */}
-      <nav className="flex items-center justify-between px-8 py-6 max-w-6xl mx-auto">
-        <Link href="/" className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="William Chen"
-            width={160}
-            height={50}
-            className="h-14 w-auto"
-            priority
-          />
-        </Link>
 
-        <div className="flex gap-8 text-sm">
-          <a href="#about" className="hover:text-zinc-500">
-            About
-          </a>
-
-          <a href="#projects" className="hover:text-zinc-500">
-            Projects
-          </a>
-
-          <a href="#skills" className="hover:text-zinc-500">
-            Skills
-          </a>
-
-          <a href="#contact" className="hover:text-zinc-500">
-            Contact
-          </a>
-        </div>
-      </nav>
+      <Navbar
+        sections={[
+          { href: "#about", label: "About" },
+          { href: "#projects", label: "Projects" },
+          { href: "#contact", label: "Contact" },
+        ]}
+      />
 
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-8 pt-32 pb-32">
@@ -73,6 +51,126 @@ export default function Home() {
           >
             Contact Me
           </a>
+        </div>
+      </section>
+
+      {/* About */}
+      <section
+        id="about"
+        className="bg-zinc-50 px-8 py-24"
+      >
+        <div className="max-w-6xl mx-auto">
+
+        <p className="text-sm tracking-widest text-zinc-500 uppercase">
+          About
+        </p>
+
+        <h2 className="text-4xl md:text-5xl font-bold mt-4 max-w-4xl">
+          I learned what breaks before I learned how to draw it.
+        </h2>
+
+        <div className="max-w-3xl mt-10 space-y-6">
+
+          <p className="text-lg text-zinc-600 leading-8">
+            My dream of becoming a mechatronics engineer started in 8th
+            grade. I saw the SFU Mechatronics logo and a live
+            demonstration at the Surrey Central campus, and I was
+            hooked. That spark sent me to study Physics at KPU, and
+            eventually led me right back to that same SFU campus, where
+            I earned my Master of Engineering in Industrial Automation.
+          </p>
+
+          <p className="text-lg text-zinc-600 leading-8">
+            The route between those two points is the part that shaped
+            how I design. I started as a production worker at Motion
+            Metrics — building custom wiring and enclosures, then going
+            out to commissioning sites and working directly with
+            customers. You learn very quickly which design decisions
+            survive contact with the field and which ones only ever
+            worked in CAD.
+          </p>
+
+          <p className="text-lg text-zinc-600 leading-8">
+            My undergraduate capstone came from the same instinct. I
+            inherited an abandoned six-wheel chassis and an Arduino left
+            behind by previous students, and turned it into a machine
+            that drove.
+          </p>
+
+          <p className="text-lg text-zinc-600 leading-8">
+            Since then the work has kept circling one problem: machines
+            that have to physically handle objects that refuse to be
+            identical. A gripper light enough to swing on a harvesting
+            arm but compliant enough not to bruise fruit. An implement
+            that disturbs soil without damaging the crop next to it.
+            R&amp;D camera and grading systems for product that arrives
+            in a different shape every time. You can&apos;t tolerance
+            your way out of that kind of variation — it has to be
+            designed into the mechanism.
+          </p>
+
+          <p className="text-lg text-zinc-600 leading-8">
+            When I&apos;m not building robots, you can find me out in the
+            mountains skiing and hiking, or exploring the world in search
+            of delicious food—especially anything from Japan!
+          </p>
+
+        </div>
+
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section
+        id="skills"
+        className="max-w-6xl mx-auto px-8 py-24"
+      >
+        <div>
+
+          <p className="text-sm tracking-widest text-zinc-500 uppercase">
+            Technical Skills
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-10 mt-10">
+
+            {/* Mechanical Design */}
+            <div>
+              <h3 className="font-semibold text-xl">
+                Mechanical Design
+              </h3>
+
+              <p className="text-zinc-600 mt-3 leading-7">
+                SolidWorks • FEA • Topology Optimization • Design for 3D
+                Printing • Mechanism & Linkage Design
+              </p>
+            </div>
+
+            {/* Robotics */}
+            <div>
+              <h3 className="font-semibold text-xl">
+                Robotics
+              </h3>
+
+              <p className="text-zinc-600 mt-3 leading-7">
+                ROS • End-Effectors • Mobile Robots • Cobots • Robot
+                Integration
+              </p>
+            </div>
+
+            {/* Controls & Vision */}
+            <div>
+              <h3 className="font-semibold text-xl">
+                Controls & Vision
+              </h3>
+
+              <p className="text-zinc-600 mt-3 leading-7">
+                PLC • HMI • Motion Control • Machine Vision • C# / .NET
+                • Commissioning
+              </p>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
@@ -224,144 +322,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
-      <section
-        id="about"
-        className="max-w-6xl mx-auto px-8 py-24"
-      >
-        <p className="text-sm tracking-widest text-zinc-500 uppercase">
-          About
-        </p>
-
-        <h2 className="text-4xl md:text-5xl font-bold mt-4 max-w-4xl">
-          I learned what breaks before I learned how to draw it.
-        </h2>
-
-        <div className="max-w-3xl mt-10 space-y-6">
-
-          <p className="text-lg text-zinc-600 leading-8">
-            My dream of becoming a mechatronics engineer started in 8th
-            grade. I saw the SFU Mechatronics logo and a live
-            demonstration at the Surrey Central campus, and I was
-            hooked. That spark sent me to study Physics at KPU, and
-            eventually led me right back to that same SFU campus, where
-            I earned my Master of Engineering in Industrial Automation.
-          </p>
-
-          <p className="text-lg text-zinc-600 leading-8">
-            The route between those two points is the part that shaped
-            how I design. I started as a production worker at Motion
-            Metrics — building custom wiring and enclosures, then going
-            out to commissioning sites and working directly with
-            customers. You learn very quickly which design decisions
-            survive contact with the field and which ones only ever
-            worked in CAD.
-          </p>
-
-          <p className="text-lg text-zinc-600 leading-8">
-            My undergraduate capstone came from the same instinct. I
-            inherited an abandoned six-wheel chassis and an Arduino left
-            behind by previous students, and turned it into a machine
-            that drove.
-          </p>
-
-          <p className="text-lg text-zinc-600 leading-8">
-            Since then the work has kept circling one problem: machines
-            that have to physically handle objects that refuse to be
-            identical. A gripper light enough to swing on a harvesting
-            arm but compliant enough not to bruise fruit. An implement
-            that disturbs soil without damaging the crop next to it.
-            R&amp;D camera and grading systems for product that arrives
-            in a different shape every time. You can&apos;t tolerance
-            your way out of that kind of variation — it has to be
-            designed into the mechanism.
-          </p>
-
-          <p className="text-lg text-zinc-600 leading-8">
-            When I&apos;m not building robots, you can find me out in the
-            mountains skiing and hiking, or exploring the world in search
-            of delicious food—especially anything from Japan!
-          </p>
-
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section
-        id="skills"
-        className="bg-zinc-50 px-8 py-24"
-      >
-        <div className="max-w-6xl mx-auto">
-
-          <p className="text-sm tracking-widest text-zinc-500 uppercase">
-            Technical Skills
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-
-            {/* Mechanical Design */}
-            <div>
-              <h3 className="font-semibold text-xl">
-                Mechanical Design
-              </h3>
-
-              <p className="text-zinc-600 mt-3">
-                SolidWorks • FEA • Topology Optimization • Design for 3D
-                Printing • Mechanism & Linkage Design
-              </p>
-            </div>
-
-            {/* Robotics */}
-            <div>
-              <h3 className="font-semibold text-xl">
-                Robotics
-              </h3>
-
-              <p className="text-zinc-600 mt-3">
-                ROS • End-Effectors • Mobile Robots • Cobots • Robot
-                Integration
-              </p>
-            </div>
-
-            {/* Controls & Vision */}
-            <div>
-              <h3 className="font-semibold text-xl">
-                Controls & Vision
-              </h3>
-
-              <p className="text-zinc-600 mt-3">
-                PLC • HMI • Motion Control • Machine Vision • C# / .NET
-                • Commissioning
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
       {/* Contact */}
       <section
         id="contact"
         className="max-w-6xl mx-auto px-8 py-24"
       >
-        <p className="text-sm tracking-widest text-zinc-500 uppercase">
-          Contact
-        </p>
+        <div>
 
-        <h2 className="text-4xl font-bold mt-4">
-          Let&apos;s build something.
-        </h2>
+          <p className="text-sm tracking-widest text-zinc-500 uppercase">
+            Contact
+          </p>
 
-        <p className="text-zinc-600 mt-6">
-          Interested in working together or learning more about my projects?
-        </p>
+          <h2 className="text-4xl font-bold mt-4">
+            Let&apos;s build something.
+          </h2>
 
-        <a
-          href="mailto:william.weijen@gmail.com"
-          className="inline-block mt-8 px-6 py-3 rounded-full bg-black text-white hover:bg-zinc-800 transition"
-        >
-          Get in Touch
-        </a>
+          <p className="text-zinc-600 mt-6">
+            Interested in working together or learning more about my projects?
+          </p>
+
+          <a
+            href="mailto:william.weijen@gmail.com"
+            className="inline-block mt-8 px-6 py-3 rounded-full bg-black text-white hover:bg-zinc-800 transition"
+          >
+            Get in Touch
+          </a>
+
+        </div>
       </section>
 
       {/* Footer */}
