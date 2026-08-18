@@ -13,8 +13,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "William Chen | Automation & Robotics Engineer",
-  description: "Portfolio of William Chen — Automation, Robotics, Controls, and Smart Manufacturing.p",
+  metadataBase: new URL("https://www.william-chen.ca"),
+  title: "William Chen | Mechanical & Robotics Design Engineer",
+  description:
+    "Portfolio of William Chen — mechanical and robotics design engineer. Mechanism design, CAD, FEA, and 3D-printed prototypes for machines that physically handle real-world objects.",
+  openGraph: {
+    title: "William Chen | Mechanical & Robotics Design Engineer",
+    description:
+      "Mechanism design, CAD, FEA, and 3D-printed prototypes for machines that physically handle real-world objects.",
+    url: "https://www.william-chen.ca",
+    siteName: "William Chen",
+    locale: "en_CA",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "William Chen | Mechanical & Robotics Design Engineer",
+    description:
+      "Mechanism design, CAD, FEA, and 3D-printed prototypes for machines that physically handle real-world objects.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
