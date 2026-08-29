@@ -1,12 +1,19 @@
 import Link from "next/link";
-import Navbar from "../components/Navbar";
 import Image from "next/image";
+import Navbar from "../components/Navbar";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Industrial Automation | William Chen",
+  description:
+    "Machine vision, controls, and commissioning for food production lines — inline 3D bun inspection, fries grading, freezer commissioning, and predictive control.",
+};
 
 export default function IndustrialAutomation() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
-        <Navbar />
-        
+      <Navbar />
+
       <section className="max-w-6xl mx-auto px-8 py-24">
 
         <p className="text-sm tracking-widest text-zinc-500 uppercase">
@@ -18,17 +25,16 @@ export default function IndustrialAutomation() {
         </h1>
 
         <p className="text-xl text-zinc-600 max-w-3xl mt-8 leading-8">
-          Industrial control systems, machine vision, motion control,
-          commissioning, and software integration for automated
-          manufacturing systems.
+          Production lines run product that looks identical to the eye but
+          reads as a different geometry to a computer. These are the vision,
+          control, and commissioning systems I&apos;ve built to measure and
+          act on that variation at line speed.
         </p>
 
-        {/* Project 1 */}
+        {/* ============ Project 1 ============ */}
         <div className="mt-20 border-t border-zinc-200 pt-12">
 
-          <p className="text-sm text-zinc-500">
-            PROJECT 01
-          </p>
+          <p className="text-sm text-zinc-500">PROJECT 01</p>
 
           <h2 className="text-4xl font-bold mt-3">
             Inline Bun Quality Inspection System
@@ -42,73 +48,75 @@ export default function IndustrialAutomation() {
           </p>
 
           <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
-
             <div>
-              <p className="text-3xl font-bold">
-                &lt;500ms
-              </p>
+              <p className="text-3xl font-bold">&lt;500 ms</p>
               <p className="text-sm text-zinc-500 mt-1">
-                Scan-to-Decision Time
+                Scan-to-decision time
               </p>
             </div>
 
             <div>
-              <p className="text-3xl font-bold">
-                3 Months
-              </p>
+              <p className="text-3xl font-bold">3 months</p>
               <p className="text-sm text-zinc-500 mt-1">
-                Archived Inspection History
+                Archived inspection history
               </p>
             </div>
-
           </div>
+
+          {/* Operator application — drop vision-ui.gif into /public/industrial-automation/ */}
+          {/*<div className="mt-10">
+            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+              <Image
+                src="/industrial-automation/vision-ui.gif"
+                alt="Operator application showing live inspection, scoring, and event log"
+                width={1200}
+                height={676}
+                unoptimized
+                className="w-full h-auto"
+              />
+            </div>
+            <p className="text-sm text-zinc-500 mt-3">
+              The operator application I built in C# — live inspection,
+              scoring, and event log, feeding results to the PLC.
+            </p>
+          </div>*/}
 
           <div className="grid md:grid-cols-3 gap-8 mt-10">
-
             <div>
-              <h3 className="font-semibold">
-                My Role
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                End-to-end development — custom Windows application
-                for data collection (C#), 3D image processing (Halcon),
-                and PLC integration for pass/fail sorting.
+              <h3 className="font-semibold">My Role</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
+                End-to-end development — custom Windows application for
+                data collection (C#), 3D image processing (Halcon), and
+                PLC integration for pass/fail sorting.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold">
-                Technologies
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                C#, Halcon, Time-of-Flight camera,
-                Allen-Bradley PLC, TCP/IP.
+              <h3 className="font-semibold">Technologies</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
+                C#, Halcon, Time-of-Flight camera, Allen-Bradley PLC,
+                TCP/IP.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold">
-                Focus
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                Sub-500ms scan-to-decision time, point-cloud scoring,
-                and 3-month result and image archiving for traceability.
+              <h3 className="font-semibold">Focus</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
+                Sub-500 ms scan-to-decision time, point-cloud scoring,
+                and three-month result and image archiving for
+                traceability.
               </p>
             </div>
-
           </div>
-
         </div>
 
-        {/* Project 2 */}
+        {/* ============ Project 2 ============ */}
         <div className="mt-20 border-t border-zinc-200 pt-12">
 
-          <p className="text-sm text-zinc-500">
-            PROJECT 02
-          </p>
+          <p className="text-sm text-zinc-500">PROJECT 02</p>
 
           <h2 className="text-4xl font-bold mt-3">
-            Fries Length & Quality Grading System
+            Fries Length &amp; Quality Grading System
           </h2>
 
           <p className="text-zinc-600 max-w-3xl mt-6 leading-8">
@@ -118,79 +126,60 @@ export default function IndustrialAutomation() {
           </p>
 
           <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
-
             <div>
-              <p className="text-3xl font-bold">
-                120 pc/min
-              </p>
+              <p className="text-3xl font-bold">120 pc/min</p>
               <p className="text-sm text-zinc-500 mt-1">
-                Inspection Throughput
+                Inspection throughput
               </p>
             </div>
 
             <div>
-              <p className="text-3xl font-bold">
-                1%
-              </p>
+              <p className="text-3xl font-bold">±1%</p>
               <p className="text-sm text-zinc-500 mt-1">
-                Measurement Accuracy
+                Measurement accuracy
               </p>
             </div>
 
             <div>
-              <p className="text-3xl font-bold">
-                Hourly
-              </p>
+              <p className="text-3xl font-bold">Hourly</p>
               <p className="text-sm text-zinc-500 mt-1">
-                Length & Defect Quality Checks
+                Length &amp; defect quality checks
               </p>
             </div>
-
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-10">
-
             <div>
-              <h3 className="font-semibold">
-                My Role
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                HMI design and development (Ignition), Gocator
-                linescan camera integration, and conveyor/motor speed
+              <h3 className="font-semibold">My Role</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
+                HMI design and development (Ignition), Gocator linescan
+                camera integration, and conveyor/motor speed
                 configuration to optimize image quality.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold">
-                Technologies
-              </h3>
-              <p className="text-zinc-600 mt-2">
+              <h3 className="font-semibold">Technologies</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
                 Ignition, Gocator linescan camera, PLC.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold">
-                Focus
-              </h3>
-              <p className="text-zinc-600 mt-2">
+              <h3 className="font-semibold">Focus</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
                 Simple on/off controls for operators, configurability
                 and history tracing for managers, and consistent
                 product quality across production runs.
               </p>
             </div>
-
           </div>
-
         </div>
 
-        {/* Project 3 */}
+        {/* ============ Project 3 ============ */}
         <div className="mt-20 border-t border-zinc-200 pt-12">
 
-          <p className="text-sm text-zinc-500">
-            PROJECT 03
-          </p>
+          <p className="text-sm text-zinc-500">PROJECT 03</p>
 
           <h2 className="text-4xl font-bold mt-3">
             Freezer System Commissioning
@@ -203,26 +192,10 @@ export default function IndustrialAutomation() {
             panel access.
           </p>
 
-          <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
-
-            <div>
-              <p className="text-3xl font-bold">
-                Production Systems
-              </p>
-              <p className="text-sm text-zinc-500 mt-1">
-                Commissioned End-to-End — I/O, Motion, VFD, Network
-              </p>
-            </div>
-
-          </div>
-
           <div className="grid md:grid-cols-3 gap-8 mt-10">
-
             <div>
-              <h3 className="font-semibold">
-                My Role
-              </h3>
-              <p className="text-zinc-600 mt-2">
+              <h3 className="font-semibold">My Role</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
                 Controls commissioning — I/O checkout, PID and motor
                 ratio tuning, VFD configuration, and network/remote
                 access setup.
@@ -230,35 +203,29 @@ export default function IndustrialAutomation() {
             </div>
 
             <div>
-              <h3 className="font-semibold">
-                Technologies
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                PLC, VFD, PID control, Industrial
-                Ethernet, VPN/remote access.
+              <h3 className="font-semibold">Technologies</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
+                PLC, VFD, PID control, Industrial Ethernet, VPN/remote
+                access.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold">
-                Focus
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                Control panel I/O verification, motor/belt speed and
-                PID tuning, VFD parameter validation, and secure
-                remote access to the plant network.
+              <h3 className="font-semibold">Focus</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
+                Control panel I/O verification, motor and belt speed
+                tuning, VFD parameter validation, and secure remote
+                access to the plant network.
               </p>
             </div>
-
           </div>
-
         </div>
 
-        {/* Project 4 */}
+        {/* ============ Project 4 ============ */}
         <div className="mt-20 border-t border-zinc-200 pt-12">
 
           <p className="text-sm text-zinc-500">
-            PROJECT 04
+            PROJECT 04 · GRADUATE TEAM PROJECT
           </p>
 
           <h2 className="text-4xl font-bold mt-3">
@@ -266,74 +233,52 @@ export default function IndustrialAutomation() {
           </h2>
 
           <p className="text-zinc-600 max-w-3xl mt-6 leading-8">
-            A graduate team project predicting dew point in a
-            manufacturing plant&apos;s compressed air drying system, to
-            move from reactive threshold-based control toward proactive,
-            predictive control.
+            Predicting dew point in a manufacturing plant&apos;s compressed
+            air drying system, to move from reactive threshold-based
+            control toward proactive, predictive control.
           </p>
 
           <div className="flex flex-wrap gap-x-12 gap-y-6 mt-8">
-
             <div>
-              <p className="text-3xl font-bold">
-                0.9925
-              </p>
-              <p className="text-sm text-zinc-500 mt-1">
-                R² on Test Set
-              </p>
+              <p className="text-3xl font-bold">0.9925</p>
+              <p className="text-sm text-zinc-500 mt-1">R² on test set</p>
             </div>
 
             <div>
-              <p className="text-3xl font-bold">
-                0.0089
-              </p>
-              <p className="text-sm text-zinc-500 mt-1">
-                RMSE on Test Set
-              </p>
+              <p className="text-3xl font-bold">0.0089</p>
+              <p className="text-sm text-zinc-500 mt-1">RMSE on test set</p>
             </div>
-
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-10">
-
             <div>
-              <h3 className="font-semibold">
-                My Role
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                Implemented and compared regression algorithms in
-                Python, and led hyperparameter tuning on the
-                best-performing model.
+              <h3 className="font-semibold">My Role</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
+                Implemented and compared regression algorithms in Python,
+                and led hyperparameter tuning on the best-performing
+                model.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold">
-                Technologies
-              </h3>
-              <p className="text-zinc-600 mt-2">
+              <h3 className="font-semibold">Technologies</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
                 Python, pandas, scikit-learn, GridSearchCV.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold">
-                Focus
-              </h3>
-              <p className="text-zinc-600 mt-2">
-                Feature engineering, comparative evaluation across
-                eight regression models, and hyperparameter tuning
-                validated by R² and RMSE.
+              <h3 className="font-semibold">Focus</h3>
+              <p className="text-zinc-600 mt-2 leading-7">
+                Feature engineering, comparative evaluation across eight
+                regression models, and hyperparameter tuning validated by
+                R² and RMSE.
               </p>
             </div>
-
           </div>
 
-          {/* Correlation Chart */}
           <div className="mt-12">
-
             <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-
               <Image
                 src="/dew-point/correlation-plot.png"
                 alt="Correlation plot between dew point and the top four predictive features"
@@ -341,17 +286,30 @@ export default function IndustrialAutomation() {
                 height={1200}
                 className="w-full h-auto"
               />
-
             </div>
-
             <p className="text-sm text-zinc-500 mt-3">
-              Correlation between dew point and the four most
-              predictive features — supply temp, discharge temp,
-              step, and motor amperage.
+              Correlation between dew point and the four most predictive
+              features — supply temp, discharge temp, step, and motor
+              amperage.
             </p>
-
           </div>
+        </div>
 
+        {/* ============ Footer nav ============ */}
+        <div className="mt-24 border-t border-zinc-200 pt-10 flex flex-wrap gap-6">
+          <Link
+            href="/robotics"
+            className="font-medium hover:underline"
+          >
+            Explore Robotics →
+          </Link>
+
+          <Link
+            href="/#contact"
+            className="font-medium hover:underline"
+          >
+            Get in touch →
+          </Link>
         </div>
 
       </section>

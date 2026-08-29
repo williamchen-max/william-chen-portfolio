@@ -1,23 +1,28 @@
 import Link from "next/link";
 import Navbar from "../../components/Navbar";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Soft Gripper Weight & Rigidity Optimization | William Chen",
+  description:
+    "A compliant fruit-harvesting end-effector taken from 130 g to 71 g through swept topology optimization, then redrawn into printable geometry and printed in PLA.",
+};
 
 export default function SoftGripper() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
 
-        <Navbar />
+      <Navbar />
 
       {/* Back to Robotics */}
       <div className="max-w-6xl mx-auto px-8 pt-8">
-
         <Link
           href="/robotics"
           className="text-sm text-zinc-500 hover:text-zinc-900"
         >
           ← Back to Robotics
-        </Link> 
-
+        </Link>
       </div>
 
       {/* Hero */}
@@ -28,7 +33,7 @@ export default function SoftGripper() {
         </p>
 
         <h1 className="text-5xl md:text-7xl font-bold mt-4">
-          Soft Gripper Weight & Rigidity Optimization
+          Soft Gripper Weight &amp; Rigidity Optimization
         </h1>
 
         <p className="text-xl text-zinc-600 max-w-3xl mt-8 leading-8">
@@ -44,29 +49,23 @@ export default function SoftGripper() {
         <div className="grid md:grid-cols-3 gap-8 mt-16 border-t border-zinc-200 pt-10">
 
           <div>
-            <p className="text-sm text-zinc-500 uppercase">
-              Project Type
-            </p>
+            <p className="text-sm text-zinc-500 uppercase">Project Type</p>
             <p className="font-semibold mt-2">
               University Project (MSE 812)
             </p>
           </div>
 
           <div>
-            <p className="text-sm text-zinc-500 uppercase">
-              Technologies
-            </p>
+            <p className="text-sm text-zinc-500 uppercase">Technologies</p>
             <p className="font-semibold mt-2">
               SolidWorks • Topology Optimization • FEA • FDM 3D Printing
             </p>
           </div>
 
           <div>
-            <p className="text-sm text-zinc-500 uppercase">
-              My Role
-            </p>
+            <p className="text-sm text-zinc-500 uppercase">My Role</p>
             <p className="font-semibold mt-2">
-              Topology Optimization, FEA & Design for 3D Printing
+              Topology Optimization, FEA &amp; Design for 3D Printing
             </p>
           </div>
 
@@ -77,7 +76,6 @@ export default function SoftGripper() {
 
       {/* Overview */}
       <section className="bg-zinc-50 px-8 py-24">
-
         <div className="max-w-6xl mx-auto">
 
           <p className="text-sm tracking-widest text-zinc-500 uppercase">
@@ -108,20 +106,17 @@ export default function SoftGripper() {
           </p>
 
         </div>
-
       </section>
 
 
-      {/* Specific Requirements */}
+      {/* Design Requirements */}
       <section className="max-w-6xl mx-auto px-8 py-24">
 
         <p className="text-sm tracking-widest text-zinc-500 uppercase">
           Design Requirements
         </p>
 
-        <h2 className="text-4xl font-bold mt-4">
-          Specific Requirements
-        </h2>
+        <h2 className="text-4xl font-bold mt-4">Specific Requirements</h2>
 
         <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
           Harvesting fruit and vegetables is still largely manual,
@@ -137,9 +132,7 @@ export default function SoftGripper() {
 
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">01</p>
-            <h3 className="font-semibold mt-2">
-              Size & Scalability
-            </h3>
+            <h3 className="font-semibold mt-2">Size &amp; Scalability</h3>
             <p className="text-sm text-zinc-600 mt-3">
               Accommodate a range of object sizes and shapes.
             </p>
@@ -147,9 +140,7 @@ export default function SoftGripper() {
 
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">02</p>
-            <h3 className="font-semibold mt-2">
-              Material Selection
-            </h3>
+            <h3 className="font-semibold mt-2">Material Selection</h3>
             <p className="text-sm text-zinc-600 mt-3">
               TPU, TPE, or flexible PLA.
             </p>
@@ -157,9 +148,7 @@ export default function SoftGripper() {
 
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">03</p>
-            <h3 className="font-semibold mt-2">
-              Geometry
-            </h3>
+            <h3 className="font-semibold mt-2">Geometry</h3>
             <p className="text-sm text-zinc-600 mt-3">
               Flexibility and deformation while maintaining
               structural integrity.
@@ -169,7 +158,7 @@ export default function SoftGripper() {
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">04</p>
             <h3 className="font-semibold mt-2">
-              Robustness & Reliability
+              Robustness &amp; Reliability
             </h3>
             <p className="text-sm text-zinc-600 mt-3">
               Stress analysis and simulation to confirm the design
@@ -180,7 +169,7 @@ export default function SoftGripper() {
           <div className="border border-zinc-200 rounded-xl p-6">
             <p className="text-sm text-zinc-500">05</p>
             <h3 className="font-semibold mt-2">
-              Texture & Surface Finish
+              Texture &amp; Surface Finish
             </h3>
             <p className="text-sm text-zinc-600 mt-3">
               Enhance grip and friction against the object.
@@ -194,7 +183,6 @@ export default function SoftGripper() {
 
       {/* Background Research */}
       <section className="bg-zinc-50 px-8 py-24">
-
         <div className="max-w-6xl mx-auto">
 
           <p className="text-sm tracking-widest text-zinc-500 uppercase">
@@ -224,11 +212,10 @@ export default function SoftGripper() {
           </p>
 
         </div>
-
       </section>
 
 
-      {/* My Contribution — Topology Optimization */}
+      {/* My Contribution */}
       <section className="max-w-6xl mx-auto px-8 py-24">
 
         <p className="text-sm tracking-widest text-zinc-500 uppercase">
@@ -256,13 +243,12 @@ export default function SoftGripper() {
           <em> lost</em>, not whether the result looked plausible.
         </p>
 
-        {/* Optimization Process */}
         <div className="grid md:grid-cols-4 gap-6 mt-12">
 
           <div className="bg-white rounded-2xl p-6 border border-zinc-200">
             <p className="text-sm text-zinc-500">01</p>
             <h3 className="text-xl font-semibold mt-3">
-              Mesh & Material
+              Mesh &amp; Material
             </h3>
             <p className="text-zinc-600 mt-3 leading-7">
               Built the FEA mesh and defined the base material for
@@ -273,7 +259,7 @@ export default function SoftGripper() {
           <div className="bg-white rounded-2xl p-6 border border-zinc-200">
             <p className="text-sm text-zinc-500">02</p>
             <h3 className="text-xl font-semibold mt-3">
-              Hinge & Border
+              Hinge &amp; Border
             </h3>
             <p className="text-zinc-600 mt-3 leading-7">
               Defined the grip hinge point and fixed outer border —
@@ -306,11 +292,8 @@ export default function SoftGripper() {
 
         </div>
 
-        {/* Topology Optimization Image */}
         <div className="mt-16">
-
           <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-
             <Image
               src="/soft-gripper/gripper-topology-optimization.jpg"
               alt="SolidWorks topology optimization material mass plot"
@@ -318,15 +301,12 @@ export default function SoftGripper() {
               height={800}
               className="w-full h-auto"
             />
-
           </div>
-
           <p className="text-sm text-zinc-500 mt-3">
             Material mass plot from one optimization iteration —
             yellow regions must be kept, purple regions are safe
             to remove.
           </p>
-
         </div>
 
       </section>
@@ -334,7 +314,6 @@ export default function SoftGripper() {
 
       {/* Design for Manufacturing */}
       <section className="bg-zinc-50 px-8 py-24">
-
         <div className="max-w-6xl mx-auto">
 
           <p className="text-sm tracking-widest text-zinc-500 uppercase">
@@ -377,9 +356,7 @@ export default function SoftGripper() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
 
             <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-              <h3 className="text-xl font-semibold">
-                Keep the load paths
-              </h3>
+              <h3 className="text-xl font-semibold">Keep the load paths</h3>
               <p className="text-zinc-600 mt-3 leading-7">
                 The material the solver refused to remove shows where
                 load actually travels. Those regions carried straight
@@ -399,9 +376,7 @@ export default function SoftGripper() {
             </div>
 
             <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-              <h3 className="text-xl font-semibold">
-                Respect the process
-              </h3>
+              <h3 className="text-xl font-semibold">Respect the process</h3>
               <p className="text-zinc-600 mt-3 leading-7">
                 Features finer than the extrusion width, or overhangs
                 the printer couldn&apos;t hold, were rebuilt into forms
@@ -410,9 +385,7 @@ export default function SoftGripper() {
             </div>
 
             <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-              <h3 className="text-xl font-semibold">
-                Orient for the bend
-              </h3>
+              <h3 className="text-xl font-semibold">Orient for the bend</h3>
               <p className="text-zinc-600 mt-3 leading-7">
                 The finger has to flex in one direction and resist load
                 in the others. Print orientation was chosen so bending
@@ -426,11 +399,10 @@ export default function SoftGripper() {
           </div>
 
         </div>
-
       </section>
 
 
-      {/* Validation — Simulation */}
+      {/* Validation */}
       <section className="max-w-6xl mx-auto px-8 py-24">
 
         <p className="text-sm tracking-widest text-zinc-500 uppercase">
@@ -460,9 +432,7 @@ export default function SoftGripper() {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-zinc-500 mt-3">
-              Initial Design
-            </p>
+            <p className="text-sm text-zinc-500 mt-3">Initial Design</p>
           </div>
 
           <div>
@@ -475,9 +445,7 @@ export default function SoftGripper() {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-zinc-500 mt-3">
-              Final Design
-            </p>
+            <p className="text-sm text-zinc-500 mt-3">Final Design</p>
           </div>
 
         </div>
@@ -499,7 +467,6 @@ export default function SoftGripper() {
 
       {/* Results */}
       <section className="bg-zinc-50 px-8 py-24">
-
         <div className="max-w-6xl mx-auto">
 
           <p className="text-sm tracking-widest text-zinc-500 uppercase">
@@ -544,23 +511,41 @@ export default function SoftGripper() {
             the material that came out of it.
           </p>
 
-          <div className="mt-12">
-            <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
-              <Image
-                src="/soft-gripper/gripper-final.png"
-                alt="Final 3D-printable soft gripper geometry"
-                width={1200}
-                height={800}
-                className="w-full h-auto"
-              />
+          <div className="grid md:grid-cols-2 gap-6 mt-12">
+
+            <div>
+              <div className="relative aspect-square overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+                <Image
+                  src="/soft-gripper/gripper-final.png"
+                  alt="Final 3D-printable soft gripper geometry"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-contain p-4"
+                />
+              </div>
+              <p className="text-sm text-zinc-500 mt-3">
+                Final, print-ready geometry
+              </p>
             </div>
-            <p className="text-sm text-zinc-500 mt-3">
-              Final, print-ready geometry
-            </p>
+
+            <div>
+              <div className="relative aspect-square overflow-hidden rounded-2xl border border-zinc-200 bg-white">
+                <Image
+                  src="/soft-gripper/real_print.png"
+                  alt="The optimized gripper finger printed in PLA, flexing under hand pressure"
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-contain p-4"
+                />
+              </div>
+              <p className="text-sm text-zinc-500 mt-3">
+                The printed finger in PLA — flexing under hand pressure
+              </p>
+            </div>
+
           </div>
 
         </div>
-
       </section>
 
 
@@ -568,7 +553,7 @@ export default function SoftGripper() {
       <section className="max-w-6xl mx-auto px-8 py-24">
 
         <p className="text-sm tracking-widest text-zinc-500 uppercase">
-          Limitations & Next Steps
+          Limitations &amp; Next Steps
         </p>
 
         <h2 className="text-4xl font-bold mt-4">
@@ -596,9 +581,7 @@ export default function SoftGripper() {
           </div>
 
           <div className="border border-zinc-200 rounded-2xl p-6">
-            <h3 className="text-xl font-semibold">
-              Cycle it to failure
-            </h3>
+            <h3 className="text-xl font-semibold">Cycle it to failure</h3>
             <p className="text-zinc-600 mt-3 leading-7">
               A harvesting gripper closes thousands of times a day.
               Static stress says nothing about fatigue at the thinned
@@ -626,11 +609,12 @@ export default function SoftGripper() {
 
       {/* Footer */}
       <footer className="border-t border-zinc-200 px-8 py-8">
-
-        <div className="max-w-6xl mx-auto text-sm text-zinc-500">
-          William Chen • Robotics & Automation
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-sm text-zinc-500">
+          <span>William Chen • Robotics &amp; Automation</span>
+          <Link href="/robotics" className="hover:text-zinc-900 transition">
+            ← Back to Robotics
+          </Link>
         </div>
-
       </footer>
 
     </main>
