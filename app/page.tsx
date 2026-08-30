@@ -316,15 +316,7 @@ export default function Home() {
             LinkedIn
           </a>
 
-          {/* Drop William-Chen-Resume.pdf into /public, or delete this link */}
-          <a
-            href="/William-Chen-Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-6 py-3 rounded-full border border-zinc-300 hover:bg-zinc-100 transition"
-          >
-            Résumé (PDF)
-          </a>
+
         </div>
       </section>
 
