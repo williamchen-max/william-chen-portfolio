@@ -425,7 +425,7 @@ export default function SoftGripper() {
           <div>
             <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
               <Image
-                src="/soft-gripper/gripper-simulation-final.png"
+                src="/soft-gripper/gripper-simulation-initial.png"
                 alt="Static stress simulation of the initial gripper design"
                 width={1200}
                 height={800}
@@ -438,7 +438,7 @@ export default function SoftGripper() {
           <div>
             <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
               <Image
-                src="/soft-gripper/gripper-simulation-initial.png"
+                src="/soft-gripper/gripper-simulation-final.png"
                 alt="Static stress simulation of the final gripper design"
                 width={1200}
                 height={800}
