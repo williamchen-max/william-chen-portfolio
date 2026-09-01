@@ -44,7 +44,6 @@ export default function Home() {
           >
             View Projects
           </a>
-
           <a
             href="#contact"
             className="px-6 py-3 rounded-full border border-zinc-300 hover:bg-zinc-100 transition"
@@ -91,10 +90,10 @@ export default function Home() {
             </p>
 
             <p className="text-lg text-zinc-600 leading-8">
-              My undergraduate capstone came from the same instinct. I
-              inherited an abandoned six-wheel chassis and an Arduino left
-              behind by previous students, and turned it into a machine
-              that drove.
+              My undergraduate capstone came from the same instinct. Two
+              previous attempts had stalled, and what I inherited was a
+              six-wheel chassis and nothing else. I turned it into a
+              machine that drove.
             </p>
 
             <p className="text-lg text-zinc-600 leading-8">
@@ -178,8 +177,8 @@ export default function Home() {
             <div className="bg-white rounded-2xl overflow-hidden border border-zinc-200 hover:shadow-lg transition">
               <div className="border-b border-zinc-200">
                 <Image
-                  src="/soft-gripper/gripper-final.png"
-                  alt="Topology-optimized soft gripper finger"
+                  src="/soft-gripper/real_print.png"
+                  alt="The topology-optimized gripper finger printed in PLA"
                   width={1200}
                   height={800}
                   className="w-full h-auto"
@@ -235,7 +234,7 @@ export default function Home() {
                 <p className="text-zinc-600 mt-4 leading-7">
                   A robot that pulls weeds mechanically instead of
                   spraying them. I designed the implement — a spring
-                  tine on a servo-driven parallel lift, 15 printed
+                  tine on a servo-driven four-bar lift, 15 printed
                   parts — and modified the chassis to carry it.
                 </p>
 
@@ -270,8 +269,9 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 border border-zinc-200 hover:shadow-lg transition">
               <h3 className="text-xl font-semibold">Industrial Automation</h3>
               <p className="text-zinc-600 mt-3 leading-7">
-                Machine vision, controls, and production systems — the
-                work that taught me what survives a factory floor.
+                Inline 3D bun inspection under 500 ms, fries grading at
+                120 pc/min, and commissioning on international
+                deployments.
               </p>
               <Link
                 href="/industrial-automation"
@@ -315,8 +315,6 @@ export default function Home() {
           >
             LinkedIn
           </a>
-
-
         </div>
       </section>
 
@@ -324,12 +322,8 @@ export default function Home() {
       <footer className="border-t border-zinc-200 px-8 py-8">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-sm text-zinc-500">
           <span>© 2026 William Chen. All rights reserved.</span>
-
           <div className="flex gap-6">
-            <a
-              href="mailto:william.weijen@gmail.com"
-              className="hover:text-zinc-900 transition"
-            >
+            <a href="mailto:william.weijen@gmail.com" className="hover:text-zinc-900 transition">
               Email
             </a>
             <a

@@ -15,12 +15,8 @@ export default function SoftGripper() {
 
       <Navbar />
 
-      {/* Back to Robotics */}
       <div className="max-w-6xl mx-auto px-8 pt-8">
-        <Link
-          href="/robotics"
-          className="text-sm text-zinc-500 hover:text-zinc-900"
-        >
+        <Link href="/robotics" className="text-sm text-zinc-500 hover:text-zinc-900">
           ← Back to Robotics
         </Link>
       </div>
@@ -45,30 +41,23 @@ export default function SoftGripper() {
           delicate produce undamaged.
         </p>
 
-        {/* Project Info */}
         <div className="grid md:grid-cols-3 gap-8 mt-16 border-t border-zinc-200 pt-10">
-
           <div>
             <p className="text-sm text-zinc-500 uppercase">Project Type</p>
-            <p className="font-semibold mt-2">
-              University Project (MSE 812)
-            </p>
+            <p className="font-semibold mt-2">University Project (MSE 812)</p>
           </div>
-
           <div>
             <p className="text-sm text-zinc-500 uppercase">Technologies</p>
             <p className="font-semibold mt-2">
               SolidWorks • Topology Optimization • FEA • FDM 3D Printing
             </p>
           </div>
-
           <div>
             <p className="text-sm text-zinc-500 uppercase">My Role</p>
             <p className="font-semibold mt-2">
               Topology Optimization, FEA &amp; Design for 3D Printing
             </p>
           </div>
-
         </div>
 
       </section>
@@ -78,9 +67,7 @@ export default function SoftGripper() {
       <section className="bg-zinc-50 px-8 py-24">
         <div className="max-w-6xl mx-auto">
 
-          <p className="text-sm tracking-widest text-zinc-500 uppercase">
-            Overview
-          </p>
+          <p className="text-sm tracking-widest text-zinc-500 uppercase">Overview</p>
 
           <h2 className="text-4xl font-bold mt-4">
             Weight you can&apos;t remove without touching the thing that
@@ -93,8 +80,8 @@ export default function SoftGripper() {
             vegetable harvesting — a gripper that conforms to irregular
             produce while holding it firmly enough not to drop it and
             gently enough not to bruise it. Mass at the end of a
-            harvesting arm is expensive: it drives actuator sizing,
-            cycle time, and arm inertia.
+            harvesting arm is the mass that costs most to move: it sets
+            actuator sizing, cycle time, and arm inertia.
           </p>
 
           <p className="text-lg text-zinc-600 max-w-3xl mt-6 leading-8">
@@ -129,53 +116,19 @@ export default function SoftGripper() {
         </p>
 
         <div className="grid md:grid-cols-5 gap-4 mt-12">
-
-          <div className="border border-zinc-200 rounded-xl p-6">
-            <p className="text-sm text-zinc-500">01</p>
-            <h3 className="font-semibold mt-2">Size &amp; Scalability</h3>
-            <p className="text-sm text-zinc-600 mt-3">
-              Accommodate a range of object sizes and shapes.
-            </p>
-          </div>
-
-          <div className="border border-zinc-200 rounded-xl p-6">
-            <p className="text-sm text-zinc-500">02</p>
-            <h3 className="font-semibold mt-2">Material Selection</h3>
-            <p className="text-sm text-zinc-600 mt-3">
-              TPU, TPE, or flexible PLA.
-            </p>
-          </div>
-
-          <div className="border border-zinc-200 rounded-xl p-6">
-            <p className="text-sm text-zinc-500">03</p>
-            <h3 className="font-semibold mt-2">Geometry</h3>
-            <p className="text-sm text-zinc-600 mt-3">
-              Flexibility and deformation while maintaining
-              structural integrity.
-            </p>
-          </div>
-
-          <div className="border border-zinc-200 rounded-xl p-6">
-            <p className="text-sm text-zinc-500">04</p>
-            <h3 className="font-semibold mt-2">
-              Robustness &amp; Reliability
-            </h3>
-            <p className="text-sm text-zinc-600 mt-3">
-              Stress analysis and simulation to confirm the design
-              withstands repeated use.
-            </p>
-          </div>
-
-          <div className="border border-zinc-200 rounded-xl p-6">
-            <p className="text-sm text-zinc-500">05</p>
-            <h3 className="font-semibold mt-2">
-              Texture &amp; Surface Finish
-            </h3>
-            <p className="text-sm text-zinc-600 mt-3">
-              Enhance grip and friction against the object.
-            </p>
-          </div>
-
+          {[
+            ["01", "Size & Scalability", "Accommodate a range of object sizes and shapes."],
+            ["02", "Material Selection", "TPU, TPE, or flexible PLA."],
+            ["03", "Geometry", "Flexibility and deformation while maintaining structural integrity."],
+            ["04", "Robustness & Reliability", "Stress analysis and simulation to confirm the design withstands repeated use."],
+            ["05", "Texture & Surface Finish", "Enhance grip and friction against the object."],
+          ].map(([n, h, b]) => (
+            <div key={n} className="border border-zinc-200 rounded-xl p-6">
+              <p className="text-sm text-zinc-500">{n}</p>
+              <h3 className="font-semibold mt-2">{h}</h3>
+              <p className="text-sm text-zinc-600 mt-3">{b}</p>
+            </div>
+          ))}
         </div>
 
       </section>
@@ -244,52 +197,18 @@ export default function SoftGripper() {
         </p>
 
         <div className="grid md:grid-cols-4 gap-6 mt-12">
-
-          <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-            <p className="text-sm text-zinc-500">01</p>
-            <h3 className="text-xl font-semibold mt-3">
-              Mesh &amp; Material
-            </h3>
-            <p className="text-zinc-600 mt-3 leading-7">
-              Built the FEA mesh and defined the base material for
-              each optimization run.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-            <p className="text-sm text-zinc-500">02</p>
-            <h3 className="text-xl font-semibold mt-3">
-              Hinge &amp; Border
-            </h3>
-            <p className="text-zinc-600 mt-3 leading-7">
-              Defined the grip hinge point and fixed outer border —
-              the constraints that protect the bending behaviour
-              through optimization.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-            <p className="text-sm text-zinc-500">03</p>
-            <h3 className="text-xl font-semibold mt-3">
-              Iterative Tuning
-            </h3>
-            <p className="text-zinc-600 mt-3 leading-7">
-              Varied displacement constraint (0.8–1.5) and mass
-              reduction targets (10%–80%) across iterations.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-            <p className="text-sm text-zinc-500">04</p>
-            <h3 className="text-xl font-semibold mt-3">
-              Stress Validation
-            </h3>
-            <p className="text-zinc-600 mt-3 leading-7">
-              Ran static stress simulations on each candidate to
-              select the best strength-to-weight iteration.
-            </p>
-          </div>
-
+          {[
+            ["01", "Mesh & Material", "Built the FEA mesh and defined the base material for each optimization run."],
+            ["02", "Hinge & Border", "Defined the grip hinge point and fixed outer border — the constraints that protect the bending behaviour through optimization."],
+            ["03", "Iterative Tuning", "Varied displacement constraint (0.8–1.5) and mass reduction targets (10%–80%) across iterations."],
+            ["04", "Stress Validation", "Ran static stress simulations on each candidate to select the best strength-to-weight iteration."],
+          ].map(([n, h, b]) => (
+            <div key={n} className="bg-white rounded-2xl p-6 border border-zinc-200">
+              <p className="text-sm text-zinc-500">{n}</p>
+              <h3 className="text-xl font-semibold mt-3">{h}</h3>
+              <p className="text-zinc-600 mt-3 leading-7">{b}</p>
+            </div>
+          ))}
         </div>
 
         <div className="mt-16">
@@ -303,9 +222,9 @@ export default function SoftGripper() {
             />
           </div>
           <p className="text-sm text-zinc-500 mt-3">
-            Material mass plot from one optimization iteration —
-            yellow regions must be kept, purple regions are safe
-            to remove.
+            Material mass plot from one optimization iteration — yellow
+            regions must be kept, purple regions are safe to remove. The
+            study reports a calculated element mass of 0.07126 kg.
           </p>
         </div>
 
@@ -354,48 +273,17 @@ export default function SoftGripper() {
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-
-            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-              <h3 className="text-xl font-semibold">Keep the load paths</h3>
-              <p className="text-zinc-600 mt-3 leading-7">
-                The material the solver refused to remove shows where
-                load actually travels. Those regions carried straight
-                into the final geometry.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-              <h3 className="text-xl font-semibold">
-                Soften the transitions
-              </h3>
-              <p className="text-zinc-600 mt-3 leading-7">
-                Raw optimizer output meets at abrupt angles that
-                concentrate stress. Fairing those junctions costs a
-                little mass and buys back durability.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-              <h3 className="text-xl font-semibold">Respect the process</h3>
-              <p className="text-zinc-600 mt-3 leading-7">
-                Features finer than the extrusion width, or overhangs
-                the printer couldn&apos;t hold, were rebuilt into forms
-                that print cleanly in PLA.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 border border-zinc-200">
-              <h3 className="text-xl font-semibold">Orient for the bend</h3>
-              <p className="text-zinc-600 mt-3 leading-7">
-                The finger has to flex in one direction and resist load
-                in the others. Print orientation was chosen so bending
-                stress runs along the extrusions rather than across the
-                layer bonds — the same anisotropy that would
-                delaminate a flexure, used to bias stiffness where the
-                design wants it.
-              </p>
-            </div>
-
+            {[
+              ["Keep the load paths", "The material the solver refused to remove shows where load actually travels. Those regions carried straight into the final geometry."],
+              ["Soften the transitions", "Raw optimizer output meets at abrupt angles that concentrate stress. Fairing those junctions costs a little mass and buys back durability."],
+              ["Respect the process", "Features finer than the extrusion width, or overhangs the printer couldn't hold, were rebuilt into forms that print cleanly in PLA."],
+              ["Orient for the bend", "The finger has to flex in one direction and resist load in the others. Print orientation was chosen so bending stress runs along the extrusions rather than across the layer bonds — the same anisotropy that would delaminate a flexure, used to bias stiffness where the design wants it."],
+            ].map(([h, b]) => (
+              <div key={h} className="bg-white rounded-2xl p-6 border border-zinc-200">
+                <h3 className="text-xl font-semibold">{h}</h3>
+                <p className="text-zinc-600 mt-3 leading-7">{b}</p>
+              </div>
+            ))}
           </div>
 
         </div>
@@ -416,12 +304,14 @@ export default function SoftGripper() {
         <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
           I ran static stress simulations on the original finger design
           and the final printable design under the same load conditions.
-          The final design holds a comparable stress distribution while
-          carrying substantially less material.
+          Peak von Mises stress rose from 3.9 kPa to 199 kPa — still more
+          than two orders of magnitude below PLA&apos;s yield strength —
+          and the deformation scale dropped from roughly 15,500× to 258×,
+          meaning the optimized finger deflects considerably further under
+          the same load.
         </p>
 
         <div className="grid md:grid-cols-2 gap-6 mt-12">
-
           <div>
             <div className="overflow-hidden rounded-2xl border border-zinc-200 bg-white">
               <Image
@@ -432,7 +322,9 @@ export default function SoftGripper() {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-zinc-500 mt-3">Initial Design</p>
+            <p className="text-sm text-zinc-500 mt-3">
+              Initial design — peak 3.9 kPa, deformation scale 15,541×
+            </p>
           </div>
 
           <div>
@@ -445,20 +337,23 @@ export default function SoftGripper() {
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-zinc-500 mt-3">Final Design</p>
+            <p className="text-sm text-zinc-500 mt-3">
+              Final design — peak 199 kPa, deformation scale 258×
+            </p>
           </div>
-
         </div>
 
         <div className="max-w-3xl mt-12 border-l-2 border-zinc-300 pl-6">
           <p className="text-lg text-zinc-600 leading-8">
-            Worth being precise about what this shows. The stress
-            response is simulated and compared directly against the
-            original. The compliant grip was <em>preserved by
-            constraint</em> — through the hinge definition and
-            displacement limits that shaped every optimization run —
-            rather than measured. Force-deflection was never
-            characterized on a rig.
+            More deflection isn&apos;t a loss here — a finger that grips
+            by bending is supposed to bend, and the extra compliance is
+            the intended direction. Worth being precise about what this
+            shows, though. The stress response is simulated and compared
+            directly against the original. The compliant grip was{" "}
+            <em>preserved by constraint</em> — through the hinge
+            definition and displacement limits that shaped every
+            optimization run — rather than measured. Force-deflection was
+            never characterized on a rig.
           </p>
         </div>
 
@@ -478,28 +373,24 @@ export default function SoftGripper() {
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6 mt-12">
-
             <div className="bg-white rounded-2xl p-8 border border-zinc-200">
               <p className="text-5xl font-bold">59 g</p>
               <p className="text-zinc-600 mt-3 leading-7">
                 removed from the finger, 130 g down to 71 g
               </p>
             </div>
-
             <div className="bg-white rounded-2xl p-8 border border-zinc-200">
               <p className="text-5xl font-bold">45%</p>
               <p className="text-zinc-600 mt-3 leading-7">
-                lighter, at a comparable simulated stress distribution
+                lighter, at a peak stress still ~250× below PLA yield
               </p>
             </div>
-
             <div className="bg-white rounded-2xl p-8 border border-zinc-200">
               <p className="text-5xl font-bold">PLA</p>
               <p className="text-zinc-600 mt-3 leading-7">
                 printed on FDM from the final geometry
               </p>
             </div>
-
           </div>
 
           <p className="text-lg text-zinc-600 max-w-3xl mt-12 leading-8">
@@ -512,7 +403,6 @@ export default function SoftGripper() {
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mt-12">
-
             <div>
               <div className="relative aspect-square overflow-hidden rounded-2xl border border-zinc-200 bg-white">
                 <Image
@@ -542,14 +432,13 @@ export default function SoftGripper() {
                 The printed finger in PLA — flexing under hand pressure
               </p>
             </div>
-
           </div>
 
         </div>
       </section>
 
 
-      {/* Limitations & Next Steps */}
+      {/* Limitations */}
       <section className="max-w-6xl mx-auto px-8 py-24">
 
         <p className="text-sm tracking-widest text-zinc-500 uppercase">
@@ -561,53 +450,27 @@ export default function SoftGripper() {
         </h2>
 
         <p className="text-lg text-zinc-600 max-w-3xl mt-8 leading-8">
-          The project ended at a validated, printed part. Three things
-          would take it from a working prototype to something you could
-          put on a harvester.
+          The project ended at a printed part checked by hand. Three
+          things would take it from a working prototype to something you
+          could put on a harvester.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mt-12">
-
-          <div className="border border-zinc-200 rounded-2xl p-6">
-            <h3 className="text-xl font-semibold">
-              Characterize the compliance
-            </h3>
-            <p className="text-zinc-600 mt-3 leading-7">
-              Clamp the fixed border, load the fingertip in known
-              increments, and measure deflection — producing
-              force-deflection curves for the original and optimized
-              parts to quantify what the 45% actually cost.
-            </p>
-          </div>
-
-          <div className="border border-zinc-200 rounded-2xl p-6">
-            <h3 className="text-xl font-semibold">Cycle it to failure</h3>
-            <p className="text-zinc-600 mt-3 leading-7">
-              A harvesting gripper closes thousands of times a day.
-              Static stress says nothing about fatigue at the thinned
-              sections, which is where a lightweighted flexure would
-              be expected to go first.
-            </p>
-          </div>
-
-          <div className="border border-zinc-200 rounded-2xl p-6">
-            <h3 className="text-xl font-semibold">
-              Test against real produce
-            </h3>
-            <p className="text-zinc-600 mt-3 leading-7">
-              The requirement was gripping without bruising. That is
-              ultimately a claim about fruit, and it needs damage
-              rates across a range of sizes, ripeness, and surface
-              conditions to be settled.
-            </p>
-          </div>
-
+          {[
+            ["Characterize the compliance", "Clamp the fixed border, load the fingertip in known increments, and measure deflection — producing force-deflection curves for the original and optimized parts to quantify what the 45% actually cost."],
+            ["Cycle it to failure", "A harvesting gripper closes thousands of times a day. Static stress says nothing about fatigue at the thinned sections, which is where a lightweighted flexure would be expected to go first."],
+            ["Test against real produce", "The requirement was gripping without bruising. That is ultimately a claim about fruit, and it needs damage rates across a range of sizes, ripeness, and surface conditions to be settled."],
+          ].map(([h, b]) => (
+            <div key={h} className="border border-zinc-200 rounded-2xl p-6">
+              <h3 className="text-xl font-semibold">{h}</h3>
+              <p className="text-zinc-600 mt-3 leading-7">{b}</p>
+            </div>
+          ))}
         </div>
 
       </section>
 
 
-      {/* Footer */}
       <footer className="border-t border-zinc-200 px-8 py-8">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-sm text-zinc-500">
           <span>William Chen • Robotics &amp; Automation</span>
